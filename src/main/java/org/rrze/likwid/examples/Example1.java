@@ -32,25 +32,36 @@ public class Example1 {
     }
 
     public void run() {
+        // Initialize marker API and get its instance. If marker API is not available or disabled, it will return
+        // a dummy implementation which will be inlined by Java VM and no performance impact will be introduced.
         ILikwidMarker marker = LikwidMarkerAPIProvider.getInstance();
+
+        // Need to init marker API ahead of registering any marker
         marker.init();
         try {
             // warm-up for 1st test
             for (int i = 0; i < warmUpItrs; i++) test1(amount);
+
+            // Likwid will be aware if the code region is repeated and it will calculate average ratios
             for (int i = 0; i < iterations; i++) {
+                // Open a tagged code region for measurements
                 marker.start("test1");
                 test1(amount);
+                // Closed a tagged code region for measurements
                 marker.stop("test1");
             }
 
             // warm-up for 2nd test
             for (int i = 0; i < warmUpItrs; i++) test2(amount);
             for (int i = 0; i < iterations; i++) {
+                // Open another tagged code region for measurements
                 marker.start("test2");
                 test2(amount);
+                // Closed a tagged code region for measurements
                 marker.stop("test2");
             }
 
+            // The results can be obtained directly in Java
             LikwidMarkerResults results1 = marker.getResults("test1", 0);
             System.out.println(results1);
 
@@ -60,8 +71,8 @@ public class Example1 {
             System.out.printf("Which just means that test2 was on average %f faster than test1%n",
                     (results2.getTime() / results2.getCount()) / (results1.getTime() / results1.getCount()));
 
-
         } finally {
+            // Remember to close the marker API
             marker.close();
         }
 

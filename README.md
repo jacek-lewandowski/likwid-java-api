@@ -31,4 +31,7 @@ likwid-perfctr -C 0 -g TLB_DATA -m java -DLIKWID_PERFMON -cp target/likwid-java-
 
 ## Enable/Disable
 Likwid markers works there is ``LIKWID_PERFMON`` system property defined. You also need to run ``likwid-perfctr`` with 
-``-m`` parameter to enable measurements for marked regions. 
+``-m`` parameter to enable measurements for marked regions.
+ 
+If ``LIKWID_PERFMON`` is not defined, an empty API implementation will be returned to the user. Therefore, Java should
+inline all the empty method and it should have no impact on the performance.
