@@ -11,7 +11,7 @@ public class Example1 {
     int idx = 0;
     int mask = (1 << 22) - 1;
     int warmUpItrs = 5;
-    int iterations = 1;
+    int iterations = 5;
     int amount = 100000000;
 
     // test1 - expect low number of L1 cache misses
