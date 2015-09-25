@@ -1,4 +1,4 @@
-package org.rrze.likwid;
+package org.jl.perftools.likwid;
 
 import java.util.Arrays;
 

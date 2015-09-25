@@ -1,4 +1,4 @@
-package org.rrze.likwid;
+package org.jl.perftools.likwid;
 
 class DummyLikwidMarker implements ILikwidMarker {
     public final static DummyLikwidMarker INSTANCE = new DummyLikwidMarker();

@@ -1,8 +1,8 @@
-package org.rrze.likwid.examples;
+package org.jl.perftools.likwid.examples;
 
-import org.rrze.likwid.ILikwidMarker;
-import org.rrze.likwid.LikwidMarkerAPIProvider;
-import org.rrze.likwid.LikwidMarkerResults;
+import org.jl.perftools.likwid.ILikwidMarker;
+import org.jl.perftools.likwid.LikwidMarkerAPIProvider;
+import org.jl.perftools.likwid.LikwidMarkerResults;
 
 public class Example1 {
     long[] arr = new long[1 << 22];

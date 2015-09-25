@@ -26,7 +26,7 @@ mvn clean install
 ```
 - Run the example application:
 ```bash
-likwid-perfctr -C 0 -g TLB_DATA -m java -DLIKWID_PERFMON -cp target/likwid-java-api-1.0-SNAPSHOT.jar org.rrze.likwid.examples.Example1
+likwid-perfctr -C 0 -g TLB_DATA -m java -DLIKWID_PERFMON -cp target/likwid-java-api-1.0-SNAPSHOT.jar org.jl.perftools.likwid.examples.Example1
 ```
 
 ## Enable/Disable
@@ -81,7 +81,7 @@ can be invoked multiple times - in this case, likwid will sum the number of even
  
 An output of this example could be: 
 ```
-# likwid-perfctr -C 0 -g TLB_DATA -m java -DLIKWID_PERFMON -cp target/likwid-java-api-1.0-SNAPSHOT.jar org.rrze.likwid.examples.Example1
+# likwid-perfctr -C 0 -g TLB_DATA -m java -DLIKWID_PERFMON -cp target/likwid-java-api-1.0-SNAPSHOT.jar org.jl.perftools.likwid.examples.Example1
 --------------------------------------------------------------------------------
 CPU name:	Intel(R) Core(TM) i7-4850HQ CPU @ 2.30GHz
 CPU type:	Intel Core Haswell processor

@@ -1,6 +1,6 @@
-package org.rrze.likwid;
+package org.jl.perftools.likwid;
 
-class LikwidMarkerAPI {
+public class LikwidMarkerAPI {
     public native void init();
 
     public native void threadInit();

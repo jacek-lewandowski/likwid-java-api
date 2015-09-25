@@ -3,34 +3,34 @@
 #include <string.h>
 #include <jni.h>
 #include <likwid.h>
-#include "org_rrze_likwid_LikwidMarkerAPI.h"
+#include "LikwidMarkerAPI.h"
 
 /*
- * Class:     org_rrze_likwid_LikwidMarkerAPI
+ * Class:     org_jl_perftools_likwid_LikwidMarkerAPI
  * Method:    init
  * Signature: ()V
  */
-JNIEXPORT void JNICALL Java_org_rrze_likwid_LikwidMarkerAPI_init
+JNIEXPORT void JNICALL Java_org_jl_perftools_likwid_LikwidMarkerAPI_init
   (JNIEnv *env, jobject obj) {
   	likwid_markerInit();
   }
 
 /*
- * Class:     org_rrze_likwid_LikwidMarkerAPI
+ * Class:     org_jl_perftools_likwid_LikwidMarkerAPI
  * Method:    threadInit
  * Signature: ()V
  */
-JNIEXPORT void JNICALL Java_org_rrze_likwid_LikwidMarkerAPI_threadInit
+JNIEXPORT void JNICALL Java_org_jl_perftools_likwid_LikwidMarkerAPI_threadInit
   (JNIEnv *env, jobject obj) {
   	likwid_markerThreadInit();
   }
 
 /*
- * Class:     org_rrze_likwid_LikwidMarkerAPI
+ * Class:     org_jl_perftools_likwid_LikwidMarkerAPI
  * Method:    register
  * Signature: (Ljava/lang/String;)V
  */
-JNIEXPORT void JNICALL Java_org_rrze_likwid_LikwidMarkerAPI_register
+JNIEXPORT void JNICALL Java_org_jl_perftools_likwid_LikwidMarkerAPI_register
   (JNIEnv *env, jobject obj, jstring _tag) {
   	const char* tag = (*env)->GetStringUTFChars(env, _tag, NULL);
  	likwid_markerRegisterRegion(tag);
@@ -38,11 +38,11 @@ JNIEXPORT void JNICALL Java_org_rrze_likwid_LikwidMarkerAPI_register
   }
 
 /*
- * Class:     org_rrze_likwid_LikwidMarkerAPI
+ * Class:     org_jl_perftools_likwid_LikwidMarkerAPI
  * Method:    start
  * Signature: (Ljava/lang/String;)V
  */
-JNIEXPORT void JNICALL Java_org_rrze_likwid_LikwidMarkerAPI_start
+JNIEXPORT void JNICALL Java_org_jl_perftools_likwid_LikwidMarkerAPI_start
   (JNIEnv *env, jobject obj, jstring _tag) {
   	const char* tag = (*env)->GetStringUTFChars(env, _tag, NULL);
   	likwid_markerStartRegion(tag);
@@ -50,11 +50,11 @@ JNIEXPORT void JNICALL Java_org_rrze_likwid_LikwidMarkerAPI_start
   }
 
 /*
- * Class:     org_rrze_likwid_LikwidMarkerAPI
+ * Class:     org_jl_perftools_likwid_LikwidMarkerAPI
  * Method:    stop
  * Signature: (Ljava/lang/String;)V
  */
-JNIEXPORT void JNICALL Java_org_rrze_likwid_LikwidMarkerAPI_stop
+JNIEXPORT void JNICALL Java_org_jl_perftools_likwid_LikwidMarkerAPI_stop
   (JNIEnv *env, jobject obj, jstring _tag) {
   	const char* tag = (*env)->GetStringUTFChars(env, _tag, NULL);
   	likwid_markerStopRegion(tag);
@@ -62,11 +62,11 @@ JNIEXPORT void JNICALL Java_org_rrze_likwid_LikwidMarkerAPI_stop
   }
 
 /*
- * Class:     org_rrze_likwid_LikwidMarkerAPI
+ * Class:     org_jl_perftools_likwid_LikwidMarkerAPI
  * Method:    getResults
  * Signature: (Ljava/lang/String;I)Lorg/rrze/likwid/LikwidMarkerResults;
  */
-JNIEXPORT void JNICALL Java_org_rrze_likwid_LikwidMarkerAPI_getResults
+JNIEXPORT void JNICALL Java_org_jl_perftools_likwid_LikwidMarkerAPI_getResults
   (JNIEnv *env, jobject obj, jstring _tag, jint _num, jobject _results) {
   	const char* tag = (*env)->GetStringUTFChars(env, _tag, NULL);
   	int iNum = (int) _num;
@@ -99,21 +99,21 @@ JNIEXPORT void JNICALL Java_org_rrze_likwid_LikwidMarkerAPI_getResults
   }
 
 /*
- * Class:     org_rrze_likwid_LikwidMarkerAPI
+ * Class:     org_jl_perftools_likwid_LikwidMarkerAPI
  * Method:    nextGroup
  * Signature: ()V
  */
-JNIEXPORT void JNICALL Java_org_rrze_likwid_LikwidMarkerAPI_nextGroup
+JNIEXPORT void JNICALL Java_org_jl_perftools_likwid_LikwidMarkerAPI_nextGroup
   (JNIEnv *env, jobject obj) {
   	likwid_markerNextGroup();
   }
 
 /*
- * Class:     org_rrze_likwid_LikwidMarkerAPI
+ * Class:     org_jl_perftools_likwid_LikwidMarkerAPI
  * Method:    close
  * Signature: ()V
  */
-JNIEXPORT void JNICALL Java_org_rrze_likwid_LikwidMarkerAPI_close
+JNIEXPORT void JNICALL Java_org_jl_perftools_likwid_LikwidMarkerAPI_close
   (JNIEnv *env, jobject obj) {
   	likwid_markerClose();
   }
